@@ -4,3 +4,5 @@ lib/
 .npm`
 package-lock.json
 dist
+out
+.vscode-test
