@@ -15,8 +15,22 @@
       {
         "command": "treegenerator.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "catCoding.start",
+        "title": "Start new cat coding session",
+        "category": "Cat Coding"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "treegenerator.helloWorld",
+          "group": "treegenerator",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
