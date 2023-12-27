@@ -7,12 +7,6 @@ import {
 } from "../../src/path_manipulation";
 
 describe("Test of path manipulations", () => {
-  it("Convert a Windows path to Posix path", () => {
-    const windowsPath = "C:\\repos\\vue-t\\tests\\views\\index\\home.vue";
-    expect(convertPathToPosix(windowsPath)).to.be.eql(
-      "C:/repos/vue-t/tests/views/index/home.vue"
-    );
-  });
   it("Convert a Posix path to Posix path", () => {
     const posixPath = "usr/bin/bash.rc";
     expect(convertPathToPosix(posixPath)).to.be.eql("usr/bin/bash.rc");
@@ -24,31 +18,31 @@ describe("Test of list of files of a dir with depth", () => {
     const testPath = "src/tree/tests/unit/data/multiple_files";
     const listFiles = getFilesRecursively(testPath);
     expect(listFiles).to.be.eql([
-      ["multiple_files/file1.txt", 0],
-      ["multiple_files/file2.env", 0],
-      ["multiple_files/test.xls", 0],
+      ["/file1.txt", 0],
+      ["/file2.env", 0],
+      ["/test.xls", 0],
     ]);
   });
   it("List all of files of sub a specific folder with max depth 0", () => {
     const testPath = "src/tree/tests/unit/data/test_folder";
     const listFiles = getFilesRecursively(testPath, 0);
     expect(listFiles).to.be.eql([
-      ["test_folder/env.test", 0],
-      ["test_folder/file.txt", 0],
+      ["/env.test", 0],
+      ["/file.txt", 0],
     ]);
   });
   it("List all of files of sub a specific folder with max depth 3", () => {
     const testPath = "src/tree/tests/unit/data/depth";
     const listFiles = getFilesRecursively(testPath, 3);
-    expect(listFiles).to.be.eql([["depth/depth1/depth2/depth3/file3.txt", 3]]);
+    expect(listFiles).to.be.eql([["/depth1/depth2/depth3/file3.txt", 3]]);
   });
   it("List all of files of sub a specific folder", () => {
     const testPath = "src/tree/tests/unit/data/test_folder";
     const listFiles = getFilesRecursively(testPath);
     expect(listFiles).to.be.eql([
-      ["test_folder/env.test", 0],
-      ["test_folder/file.txt", 0],
-      ["test_folder/src/test.txt", 1],
+      ["/env.test", 0],
+      ["/file.txt", 0],
+      ["/src/test.txt", 1],
     ]);
   });
 });

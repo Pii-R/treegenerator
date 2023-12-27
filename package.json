@@ -36,7 +36,7 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "mocha -r ts-node/register 'src/tree/tests/unit/tree_test.ts'"
+    "test": "mocha -r ts-node/register 'src/tree/tests/unit/*'"
   },
   "devDependencies": {
     "@types/chai": "^4.3.11",

@@ -2,12 +2,9 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
 import {
-  ClassicTree,
-  ClassicTreeConfiguration,
   DetailedTree,
   DetailedTreeConfiguration,
   FullFilePrefixes,
-  FilePrefixes,
 } from "./tree/src/tree";
 import { convertPathToPosix } from "./tree/src/path_manipulation";
 
