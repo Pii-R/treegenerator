@@ -28,7 +28,7 @@ describe("Tree building", () => {
   it("Create simple tree with one depth and a single file", () => {
     const folderPath = "src/tree/tests/unit/data/one_file";
     const configuration = new ClassicTreeConfiguration(
-      "🗃️ ",
+      "🗃️",
       new FilePrefixes(""),
       3,
       " ",
@@ -37,7 +37,7 @@ describe("Tree building", () => {
 
     const tree = new ClassicTree(configuration);
     expect(tree.createTree(folderPath)).to.be.eql([
-      "🗃️ one_file",
+      "🗃️",
       "   unique_file",
     ]);
   });
@@ -52,7 +52,7 @@ describe("Tree building", () => {
     );
     const tree = new ClassicTree(configuration);
     expect(tree.createTree(folderPath)).to.be.eql([
-      "🗃️ multiple_files",
+      "🗃️ ",
       "   file1.txt",
       "   file2.env",
       "   test.xls",
@@ -69,7 +69,7 @@ describe("Tree building", () => {
     );
     const tree = new ClassicTree(configuration);
     expect(tree.createTree(folderPath)).to.be.eql([
-      "🗃️ test_folder",
+      "🗃️ ",
       "   env.test",
       "   file.txt",
       "   🗃️ src",
@@ -87,7 +87,7 @@ describe("Tree building", () => {
     );
     const tree = new ClassicTree(configuration);
     expect(tree.createTree(folderPath)).to.be.eql([
-      "🗃️ test_folder",
+      "🗃️ ",
       "   -env.test",
       "   -file.txt",
       "   🗃️ src",
@@ -106,7 +106,7 @@ describe("Tree building", () => {
     );
     const tree = new ClassicTree(configuration);
     expect(tree.createTree(folderPath)).to.be.eql([
-      "🗃️ depth",
+      "🗃️ ",
       "   🗃️ depth1",
       "      🗃️ depth2",
       "         🗃️ depth3",
@@ -125,7 +125,7 @@ describe("Tree building", () => {
     );
     const tree = new ClassicTree(configuration);
     expect(tree.createTree(folderPath)).to.be.eql([
-      "🗃️ depth",
+      "🗃️ ",
       "   🗃️ depth1",
       "      🗃️ depth2",
       "         🗃️ depth3",
